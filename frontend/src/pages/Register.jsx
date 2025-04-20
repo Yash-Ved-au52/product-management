@@ -1,30 +1,43 @@
 // File: src/pages/Register.jsx
-import { useState } from 'react';
+import { useState } from "react";
 import {
-  Box, Button, FormControl, FormLabel, Input,
-  Heading, useToast, Text, InputGroup, InputLeftElement, Flex
-} from '@chakra-ui/react';
-import { AtSignIcon, LockIcon } from '@chakra-ui/icons';
-import axios from '../utils/axios';
-import { useNavigate, Link as RouterLink } from 'react-router-dom';
+  Box,
+  Button,
+  FormControl,
+  FormLabel,
+  Input,
+  Heading,
+  useToast,
+  Text,
+  InputGroup,
+  InputLeftElement,
+  Flex,
+} from "@chakra-ui/react";
+import { AtSignIcon, LockIcon } from "@chakra-ui/icons";
+import axios from "../utils/axios";
+import { useNavigate, Link as RouterLink } from "react-router-dom";
 
 const Register = () => {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
   const toast = useToast();
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('/user/register', { username, password });
-      toast({ title: 'Registered successfully!', status: 'success', duration: 3000 });
-      navigate('/');
+      await axios.post("/user/register", { username, password });
+      toast({
+        title: "Registered successfully!",
+        status: "success",
+        duration: 3000,
+      });
+      navigate("/");
     } catch (err) {
       toast({
-        title: 'Registration failed',
-        description: err.response?.data?.message || 'Try again',
-        status: 'error',
+        title: "Registration failed",
+        description: err.response?.data?.message || "Try again",
+        status: "error",
         duration: 3000,
       });
     }
@@ -35,7 +48,7 @@ const Register = () => {
       minH="100vh"
       align="center"
       justify="center"
-      bgImage="url('https://images.unsplash.com/photo-1521790360288-5a86c88f8d9b')"
+      bgImage="url('https://images.unsplash.com/photo-1665652475985-37e285aeff53?q=80&w=2831&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')"
       bgSize="cover"
       bgPosition="center"
     >
@@ -89,8 +102,8 @@ const Register = () => {
         </form>
 
         <Text mt={4} textAlign="center" fontSize="sm">
-          Already have an account?{' '}
-          <RouterLink to="/" style={{ color: '#3182CE' }}>
+          Already have an account?{" "}
+          <RouterLink to="/" style={{ color: "#3182CE" }}>
             Login
           </RouterLink>
         </Text>
