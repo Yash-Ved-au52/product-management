@@ -10,7 +10,7 @@ const Navbar = () => {
 
   const handleLogout = () => {
     dispatch(logout()); // proper logout
-    navigate('/login'); // redirect to login
+    navigate('/'); // redirect to login
   };
 
   return (
