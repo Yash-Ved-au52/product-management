@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const instance = axios.create({
-  baseURL: 'http://localhost:8000/api', // Your backend URL
+  baseURL: 'https://product-management-api-bc0d.onrender.com/api', // Your backend URL
 });
 
 instance.interceptors.request.use((req) => {
