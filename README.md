@@ -49,5 +49,7 @@ To run this project locally, follow these steps:
 
 ### Clone the Repository
 ```bash
-git clone https://github.com/Yash-Ved-au52/product-management-system.git
-cd product-management-system
+git clone https://github.com/Yash-Ved-au52/product-management.git
+cd product-management
+
+
